@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--
+Base templates for other web pages in this app
+-->
+<html lang="en" xmlns:th="www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+    </head>
+    <body>
+        <div th:fragment="header">
+            <h2>BullHorn</h2>
+            <a href="/">Messages</a>
+            <a href="/logout">Logout</a>
+        </div>
+        
+        <div th:fragment="footer"> 
+            Copyright 2018
+        </div>
+            
+    </body>
+</html>
