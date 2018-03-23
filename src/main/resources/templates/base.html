@@ -19,13 +19,13 @@ Base templates for other web pages in this app
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous" />
     </head>
     <body>
-        <div th:fragment="header">
+        <th:block th:fragment="header">
             <h2>BullHorn</h2>
             <a href="/" class="btn btn-primary" role="button" >Messages</a>
             <a href="/logout" class="btn btn-primary" role="button">Logout</a>
-        </div>
+        </th:block>
         
-        <div th:fragment="footer"> 
+        <div th:fragment="footer">
             Copyright 2018
         </div>
             
