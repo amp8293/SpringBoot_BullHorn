@@ -3,26 +3,14 @@
 Home/landing page, display messages, allow user to register or login
 -->
 <html lang="en" xmlns:th="www.thymeleaf.org">
-    <head>
-        <title>BullHorn</title>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-        <!-- Bootstrap Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-
-        <!-- Bootstrap Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
-
-        <!-- Bootstrap Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous" />
-
+    <head th:replace="base :: stdHeaders">
     </head>
 
     <body>
-        <div th:replace="base :: header"></div>
-        <a href="/message">[New Message]</a>
+        <div th:replace="base :: header">
+        </div>
+        <a href="/message" class="btn btn-primary" role="button">[New Message]</a>
+
         <div th:each="message : ${messages}">
             <div class="alert alert-info" role="alert">
                 <h4 th:text="${message.content}"></h4>

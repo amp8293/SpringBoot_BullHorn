@@ -4,9 +4,7 @@
       xmlns:th="www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
       >
-    <head>
-        <meta charset="UTF-8" />
-        <title>BullHorn Login</title>
+    <head th:replace="base :: stdHeaders">
     </head>
     <body>
         <div th:replace="base :: header"></div>
@@ -18,9 +16,17 @@
             You have been logged out.
         </div>
         <form th:action="@{/login}" method="post">
-            <div><label> User Name: <input type="text" name="username" /></label></div>
-            <div><label> Password: <input type="password" name="password" /></label></div>
-            <div><input type="submit" value="Sign In" /></div>
+            <div class="form-group">
+                <label for="username">User Name</label>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Enter user name" />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Sign In</button>
         </form>
         <div th:replace="base :: footer"></div>
     </body>
