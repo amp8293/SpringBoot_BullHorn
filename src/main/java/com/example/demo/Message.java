@@ -2,6 +2,7 @@ package com.example.demo;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 /**
  * A message that can be "sent"/"tweeted" in the BullHorn app.
@@ -25,8 +26,13 @@ public class Message {
     private String content;
 
     /**
+     * Image to display along with the message.  null=no image.
+     */
+    private String imageUrl;
+
+    /**
      * Date message was posted.
-     *
+     * <p>
      * (String representation for now; future: store as date field)
      */
     //@NotNull   maybe put this back once we figure out how to prevent the form from checking it until we've had a chance to fill it in!
@@ -35,7 +41,7 @@ public class Message {
     /**
      * Username of the user who sent this message (taken from the current logged
      * in user)
-     *
+     * <p>
      * Future: store the ID from the "User" table. For this small project, we do
      * not have a user table, and hard code some available logins at startup,
      * so we use the user's login name.
@@ -59,6 +65,14 @@ public class Message {
         this.content = content;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public String getPostedDate() {
         return postedDate;
     }
@@ -74,6 +88,6 @@ public class Message {
     public void setFromUser(String fromUser) {
         this.fromUser = fromUser;
     }
-    
-    
+
+
 }

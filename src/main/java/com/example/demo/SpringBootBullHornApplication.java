@@ -11,6 +11,7 @@ web:/newMessage
 done: write security classes & authentication
 done: write properties file for db
 tbw: put bootstrap and format pages
+tbw: put option to put images
  */
 
 package com.example.demo;
